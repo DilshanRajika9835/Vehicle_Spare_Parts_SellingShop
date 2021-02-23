@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="680.0" maxWidth="1366.0" minHeight="680.0" minWidth="1366.0" prefHeight="680.0" prefWidth="1366.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.VehicleSparePartsSellingShop.pos.controller.ReturnItemHistoryFormController">
+   <children>
+      <ImageView fitHeight="680.0" fitWidth="1366.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.7" pickOnBounds="true">
+         <image>
+            <Image url="@../assert/bg2.jpg" />
+         </image></ImageView>
+      <TableView fx:id="tblReturnItemHistory" layoutX="31.0" layoutY="122.0" minWidth="1256.0" opacity="0.64" prefHeight="492.0" prefWidth="1256.0" stylesheets="@../Style/Style.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="53.0" AnchorPane.topAnchor="129.0">
+        <columns>
+            <TableColumn fx:id="colNo" prefWidth="83.0" text="No" />
+          <TableColumn fx:id="colorderid" prefWidth="155.0" text="OrderID" />
+            <TableColumn fx:id="colmodelno" prefWidth="179.0" text="Model No" />
+            <TableColumn fx:id="coltotalcost" prefWidth="196.0" text="Total Cost" />
+            <TableColumn fx:id="colreturnqty" prefWidth="115.0" text="Return Qty" />
+            <TableColumn fx:id="colreturnmoney" prefWidth="158.0" text="Return Money" />
+            <TableColumn fx:id="colreturndate" prefWidth="184.0" text="Return Date" />
+            <TableColumn fx:id="colreturntime" prefWidth="170.0" text="Return Time" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtsearchbar" layoutX="56.0" layoutY="88.0" prefHeight="25.0" prefWidth="410.0" promptText="Search Here" styleClass="button" stylesheets="@../Style/Style.css">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Label alignment="CENTER" layoutY="7.0" prefHeight="63.0" prefWidth="1366.0" text="Return Item History " textFill="#2419bb">
+         <font>
+            <Font name="Bell MT Bold" size="50.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="63.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/search.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

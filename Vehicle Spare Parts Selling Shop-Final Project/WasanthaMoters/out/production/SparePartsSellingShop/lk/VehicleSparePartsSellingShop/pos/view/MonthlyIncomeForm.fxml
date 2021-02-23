@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="680.0" maxWidth="1366.0" minHeight="680.0" minWidth="1366.0" prefHeight="680.0" prefWidth="1366.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.VehicleSparePartsSellingShop.pos.controller.MonthlyIncomeFormController">
+   <children>
+      <ImageView fitHeight="680.0" fitWidth="1366.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.64" pickOnBounds="true">
+         <image>
+            <Image url="@../assert/bg2.jpg" />
+         </image></ImageView>
+      <Label alignment="CENTER" layoutX="1.0" layoutY="4.0" prefHeight="70.0" prefWidth="1366.0" text="Monthly Income " textFill="#2419bb" AnchorPane.bottomAnchor="606.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="4.0">
+         <font>
+            <Font name="Bell MT Bold" size="50.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblmonthlyincome" layoutX="48.0" layoutY="131.0" opacity="0.68" prefHeight="507.0" prefWidth="1273.0" stylesheets="@../Style/Style.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="125.0">
+        <columns>
+            <TableColumn fx:id="colno" prefWidth="66.0" text="No" />
+          <TableColumn fx:id="colyearname" prefWidth="452.00001525878906" text="Year" />
+          <TableColumn fx:id="colmonthname" prefWidth="339.0" text="Month Name" />
+            <TableColumn fx:id="colincome" prefWidth="412.0" text="Income (Rs)" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtsearchbar" layoutX="48.0" layoutY="89.0" prefWidth="410.0" promptText="Search Here" styleClass="button" stylesheets="@../Style/Style.css" AnchorPane.bottomAnchor="570.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="908.0" AnchorPane.topAnchor="78.0" />
+      <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="57.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/search.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

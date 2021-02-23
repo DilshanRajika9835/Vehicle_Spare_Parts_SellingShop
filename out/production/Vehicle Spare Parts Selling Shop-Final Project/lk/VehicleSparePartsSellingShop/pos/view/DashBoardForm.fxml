@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="743.0" prefWidth="1491.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.VehicleSparePartsSellingShop.pos.controller.DashBoardFormController">
+   <children>
+      <AnchorPane prefHeight="743.0" prefWidth="180.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="743.0" fitWidth="180.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assert/solidcolor.png" />
+               </image></ImageView>
+            <JFXButton buttonType="RAISED" layoutX="5.0" layoutY="505.0" onAction="#btnmoterbikepartsonaction" opacity="0.82" prefHeight="55.0" prefWidth="169.0" style="-fx-background-color: lightgreen;" stylesheets="@../Style/Style.css" text="              MoterBike Parts" textFill="#121017">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="5.0" layoutY="241.0" onAction="#btncarpartsonaction" opacity="0.88" prefHeight="55.0" prefWidth="169.0" style="-fx-background-color: lightgreen;" stylesheets="@../Style/Style.css" text="           Car Parts" textFill="#121017" AnchorPane.topAnchor="241.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="5.0" layoutY="307.0" onAction="#vehiclepartsonaction" opacity="0.82" prefHeight="55.0" prefWidth="169.0" style="-fx-background-color: lightgreen;" stylesheets="@../Style/Style.css" text="            Van Parts" textFill="#121017">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="5.0" layoutY="373.0" onAction="#btnlorrypartsonaction" opacity="0.82" prefHeight="55.0" prefWidth="169.0" style="-fx-background-color: lightgreen;" stylesheets="@../Style/Style.css" text="                 Lorry Parts" textFill="#121017">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="6.0" layoutY="439.0" onAction="#btnthreewheelonaction" opacity="0.82" prefHeight="55.0" prefWidth="169.0" style="-fx-background-color: lightgreen;" stylesheets="@../Style/Style.css" text="           ThreeWheel Parts " textFill="#121017">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="4.0" layoutY="637.0" onAction="#btnreturnpartsonaction" opacity="0.82" prefHeight="55.0" prefWidth="169.0" style="-fx-background-color: lightgreen;" stylesheets="@../Style/Style.css" text="            Return Item" textFill="#121017">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="5.0" layoutY="175.0" onAction="#btnallpartsonaction" opacity="0.82" prefHeight="55.0" prefWidth="169.0" style="-fx-background-color: lightgreen;" stylesheets="@../Style/Style.css" text="              All Parts" textFill="#121017" AnchorPane.topAnchor="175.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="5.0" layoutY="571.0" onAction="#btnbusonaction" opacity="0.82" prefHeight="55.0" prefWidth="169.0" style="-fx-background-color: lightgreen;" stylesheets="@../Style/Style.css" text="              Bus Parts" textFill="#121017">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="69.0" fitWidth="136.0" layoutX="24.0" layoutY="15.0" onMouseClicked="#lblHomeMouseClickOnAction" opacity="0.77" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <image>
+                  <Image url="@../assert/mainhome.png" />
+               </image>
+            </ImageView>
+            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="6.0" layoutY="109.0" onAction="#btnorderonaction" opacity="0.88" prefHeight="55.0" prefWidth="169.0" style="-fx-background-color: lightgreen;" styleClass="table-row-cell" stylesheets="@../Style/Style.css" text="              Place  Order" textFill="#121017">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fx:id="ordericon" fitHeight="35.0" fitWidth="70.0" layoutX="8.0" layoutY="120.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/ordericon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="70.0" layoutX="15.0" layoutY="247.0" opacity="0.62" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/car.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="70.0" layoutX="11.0" layoutY="319.0" opacity="0.62" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/van.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="70.0" layoutX="13.0" layoutY="384.0" opacity="0.62" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/lorry.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="70.0" layoutX="1.0" layoutY="449.0" opacity="0.62" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/threewheel.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="60.0" layoutX="7.0" layoutY="516.0" opacity="0.62" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/moterbike.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ImageView>
+            <ImageView fitHeight="35.0" fitWidth="70.0" layoutX="13.0" layoutY="583.0" opacity="0.62" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/bus.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="41.0" fitWidth="87.0" layoutX="7.0" layoutY="648.0" opacity="0.62" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/return.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="70.0" layoutX="9.0" layoutY="184.0" opacity="0.62" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <image>
+                  <Image url="@../assert/allvehicle.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="root" layoutX="180.0" layoutY="41.0" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: black;" />
+      <ImageView fitHeight="41.0" fitWidth="1311.0" layoutX="180.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.95" pickOnBounds="true">
+         <image>
+            <Image url="@../assert/solidcolor.png" />
+         </image></ImageView>
+      <Label fx:id="lbltime" layoutX="1284.0" layoutY="5.0" prefHeight="31.0" prefWidth="96.0" textFill="#f5f4f4">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="lbldate" layoutX="1198.0" layoutY="5.0" prefHeight="31.0" prefWidth="87.0" textFill="#f5efef">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

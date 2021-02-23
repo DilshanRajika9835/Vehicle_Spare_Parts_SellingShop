@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="700.0" maxWidth="1311.0" minHeight="700.0" minWidth="1311.0" prefHeight="700.0" prefWidth="1311.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.VehicleSparePartsSellingShop.pos.controller.ReturnFormController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1311.0" opacity="0.82" pickOnBounds="true">
+         <image>
+            <Image url="@../assert/bg2.jpg" />
+         </image></ImageView>
+      <TableView fx:id="tblorder" layoutX="27.0" layoutY="365.0" opacity="0.91" prefHeight="244.0" prefWidth="1134.0" stylesheets="@../Style/Style.css">
+        <columns>
+          <TableColumn fx:id="colorderid" prefWidth="120.0" text="Order ID" />
+          <TableColumn fx:id="colmodelno" prefWidth="134.0" text="Model No" />
+            <TableColumn fx:id="coldescription" prefWidth="209.0" text="Description" />
+            <TableColumn fx:id="colorderqty" prefWidth="134.0" text="OrderQty" />
+            <TableColumn fx:id="colorderdate" prefWidth="143.0" text="OrderDate" />
+            <TableColumn fx:id="coltotalcost" prefWidth="122.0" text="Total Cost" />
+            <TableColumn fx:id="coldescount" prefWidth="115.0" text="Descount " />
+            <TableColumn fx:id="coldescountprice" prefWidth="155.0" text="Descount Price" />
+        </columns>
+      </TableView>
+      <Label layoutX="49.0" layoutY="77.0" text="OrderID" textFill="#322927d9">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="433.0" layoutY="75.0" text="ModelNo" textFill="#322927d9">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="122.0" text="Description" textFill="#322927d9">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="430.0" layoutY="165.0" text="Total Cost" textFill="#322927d9">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="817.0" layoutY="75.0" text="OrderDate" textFill="#322927d9">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="816.0" layoutY="162.0" text="OrderQty" textFill="#322927d9">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="816.0" layoutY="118.0" text="UnitPrice" textFill="#322927d9">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="261.0" text="Return Qty" textFill="#322927d9">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="429.0" layoutY="259.0" text="ReturnMoney" textFill="#322927d9">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtsearch" layoutX="28.0" layoutY="324.0" prefHeight="25.0" prefWidth="410.0" promptText="Search Model No Here" styleClass="button" stylesheets="@../Style/Style.css" />
+      <Label layoutX="48.0" layoutY="166.0" text="Discount" textFill="#322927d9">
+         <font>
+            <Font name="Bell MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="1.0" layoutY="2.0" prefHeight="70.0" prefWidth="1311.0" text="Item Return " textFill="#2419bb">
+         <font>
+            <Font name="Bell MT Bold" size="50.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="36.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/search.png" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="1031.0" layoutY="200.0" onAction="#btnCheckOnAction" prefHeight="42.0" prefWidth="134.0" style="-fx-background-color: orange;" stylesheets="@../Style/Style.css" text="Check">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1028.0" layoutY="312.0" onAction="#btnReturnOnAction" prefHeight="42.0" prefWidth="134.0" style="-fx-background-color: green;" stylesheets="@../Style/Style.css" text="Return">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="30.0" fitWidth="55.0" layoutX="1037.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/updateicon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="55.0" layoutX="1028.0" layoutY="320.0" opacity="0.55" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/return.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtorderid" layoutX="192.0" layoutY="73.0" onAction="#txtOrderIDSearchOnAction" prefHeight="25.0" prefWidth="230.0" promptText="Enter Order ID" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtdescription" editable="false" layoutX="192.0" layoutY="118.0" prefHeight="33.0" prefWidth="604.0" promptText="Description" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtunitprice" editable="false" layoutX="934.0" layoutY="111.0" prefHeight="25.0" prefWidth="230.0" promptText="Unit Price" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtreturnmoney" editable="false" layoutX="566.0" layoutY="255.0" prefHeight="25.0" prefWidth="230.0" promptText="Return Money" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtmodelno" editable="false" layoutX="568.0" layoutY="72.0" prefHeight="25.0" prefWidth="230.0" promptText="Model No" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txttotalcost" editable="false" layoutX="565.0" layoutY="161.0" prefHeight="25.0" prefWidth="230.0" promptText="Total Cost" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtdiscount" editable="false" layoutX="192.0" layoutY="161.0" prefHeight="25.0" prefWidth="230.0" promptText="Total Discount" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtorderdate" editable="false" layoutX="933.0" layoutY="70.0" prefHeight="25.0" prefWidth="230.0" promptText="Description" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtorderqty" editable="false" layoutX="935.0" layoutY="156.0" prefHeight="25.0" prefWidth="230.0" promptText="Order Qty" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtreturnQty" focusColor="#18389a" layoutX="190.0" layoutY="258.0" onAction="#txtreturnQtyOnAction" prefHeight="25.0" prefWidth="230.0" promptText="Enter Return Qty" styleClass="label" stylesheets="@../Style/Style.css" />
+      <Separator layoutX="1.0" layoutY="246.0" prefWidth="1311.0" style="-fx-background-color: black;" />
+   </children>
+</AnchorPane>

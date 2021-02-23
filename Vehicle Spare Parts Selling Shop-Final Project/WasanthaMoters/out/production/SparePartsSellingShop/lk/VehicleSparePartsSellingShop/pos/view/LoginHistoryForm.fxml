@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="680.0" maxWidth="1366.0" minHeight="680.0" minWidth="1366.0" prefHeight="680.0" prefWidth="1366.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.VehicleSparePartsSellingShop.pos.controller.LoginHistoryFormController">
+   <children>
+      <ImageView fitHeight="680.0" fitWidth="1366.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.63" pickOnBounds="true">
+         <image>
+            <Image url="@../assert/bg2.jpg" />
+         </image></ImageView>
+      <TableView fx:id="tblloginhistory" editable="true" layoutX="34.0" layoutY="129.0" minWidth="1256.0" opacity="0.64" prefHeight="492.0" prefWidth="1256.0" stylesheets="@../Style/Style.css" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="53.0" AnchorPane.topAnchor="129.0">
+        <columns>
+          <TableColumn fx:id="colloginID" prefWidth="92.00003051757812" text="No" />
+            <TableColumn fx:id="colusername" prefWidth="265.0" text="UserName" />
+            <TableColumn fx:id="colpassword" prefWidth="272.0" text="Password" />
+            <TableColumn fx:id="collogindate" prefWidth="259.0" text="Login Date" />
+            <TableColumn fx:id="collogintime" prefWidth="201.0" text="Login Time" />
+            <TableColumn fx:id="colloginstates" prefWidth="203.0" text="Login States" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtsearchbar" layoutX="55.0" layoutY="83.0" prefHeight="25.0" prefWidth="410.0" promptText="Search Here" styleClass="button" stylesheets="@../Style/Style.css">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutY="7.0" prefHeight="65.0" prefWidth="1366.0" text="Login History Form" textFill="#2419bb">
+         <font>
+            <Font name="Bell MT Bold" size="50.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="65.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/search.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

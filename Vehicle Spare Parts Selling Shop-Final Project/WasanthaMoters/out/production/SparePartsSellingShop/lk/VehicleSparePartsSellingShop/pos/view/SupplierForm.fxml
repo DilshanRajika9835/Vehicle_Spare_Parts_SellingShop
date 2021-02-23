@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="680.0" maxWidth="1366.0" minHeight="680.0" minWidth="1366.0" prefHeight="680.0" prefWidth="1366.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.VehicleSparePartsSellingShop.pos.controller.SupplierFormController">
+   <children>
+      <ImageView fitHeight="680.0" fitWidth="1366.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.79" pickOnBounds="true">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <image>
+            <Image url="@../assert/bg2.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="43.0" layoutY="85.0" prefHeight="31.0" prefWidth="93.0" text="Supplier ID">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="129.0" prefHeight="31.0" prefWidth="135.0" text="Company Name">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="466.0" layoutY="88.0" prefHeight="31.0" prefWidth="120.0" text="Supplier Name">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="907.0" layoutY="89.0" prefHeight="31.0" prefWidth="146.0" text="PhoneNumber">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="466.0" layoutY="133.0" prefHeight="31.0" prefWidth="146.0" text="Company Address">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblsupplier" layoutX="42.0" layoutY="260.0" opacity="0.77" prefHeight="377.0" prefWidth="1273.0" stylesheets="@../Style/Style.css" tableMenuButtonVisible="true">
+        <columns>
+            <TableColumn fx:id="colno" prefWidth="52.0" text="No" />
+          <TableColumn fx:id="colsuplierid" prefWidth="124.0" text="SupplyID" />
+          <TableColumn fx:id="colsupliername" prefWidth="221.0" text="Name" />
+            <TableColumn fx:id="colphonenumber" prefWidth="147.0" text="Phone Number" />
+            <TableColumn fx:id="coladdress" prefWidth="298.0" text="Company Address" />
+            <TableColumn fx:id="colcompanyname" prefWidth="193.0" text="Company Name" />
+            <TableColumn fx:id="colemailaddress" prefWidth="236.0" text="Company Email" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtsearchbar" layoutX="43.0" layoutY="215.0" prefHeight="25.0" prefWidth="410.0" promptText="Search Here" styleClass="button" stylesheets="@../Style/Style.css" />
+      <Label alignment="CENTER" layoutY="5.0" minHeight="0.0" minWidth="1245.0" prefHeight="68.0" prefWidth="1366.0" text="Add New Supplier" textFill="#2419bb">
+         <font>
+            <Font name="Bell MT Bold" size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="909.0" layoutY="136.0" prefHeight="31.0" prefWidth="93.0" text="Email">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtsupplierid" layoutX="177.0" layoutY="82.0" onAction="#txtSupplierIDSearchOnAction" prefHeight="31.0" prefWidth="250.0" promptText="Enter Supplier ID" styleClass="label" stylesheets="@../Style/Style.css">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtcompanyname" layoutX="176.0" layoutY="128.0" prefHeight="31.0" prefWidth="250.0" promptText="Enter Company  Name" styleClass="label" stylesheets="@../Style/Style.css">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtname" layoutX="627.0" layoutY="85.0" prefHeight="31.0" prefWidth="250.0" promptText="Enter Supplier Name" styleClass="label" stylesheets="@../Style/Style.css">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtaddress" layoutX="629.0" layoutY="130.0" prefHeight="31.0" prefWidth="250.0" promptText="Enter Company Address" styleClass="label" stylesheets="@../Style/Style.css">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtphonenumber" layoutX="1055.0" layoutY="87.0" prefHeight="31.0" prefWidth="250.0" promptText="Enter Phone Number" styleClass="label" stylesheets="@../Style/Style.css">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtemail" layoutX="1055.0" layoutY="134.0" prefHeight="31.0" prefWidth="250.0" promptText="Enter Email Address" styleClass="label" stylesheets="@../Style/Style.css">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton alignment="BASELINE_CENTER" buttonType="RAISED" contentDisplay="RIGHT" layoutX="953.0" layoutY="207.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: red;" stylesheets="@../Style/Style.css" text="  Delete">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton alignment="BASELINE_CENTER" buttonType="RAISED" layoutX="827.0" layoutY="207.0" onAction="#btnAddOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: green;" stylesheets="@../Style/Style.css" text="Add">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1077.0" layoutY="206.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: orange;" stylesheets="@../Style/Style.css" text="   Update">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1199.0" layoutY="205.0" onAction="#btnClearOnAction" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: white;" stylesheets="@../Style/Style.css" text="  Clear">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="19.0" fitWidth="50.0" layoutX="1084.0" layoutY="214.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../assert/updateicon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="43.0" layoutX="1209.0" layoutY="214.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../assert/clear.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="22.0" fitWidth="43.0" layoutX="955.0" layoutY="215.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../assert/delete.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="831.0" layoutY="211.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../assert/addman.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="49.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/search.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

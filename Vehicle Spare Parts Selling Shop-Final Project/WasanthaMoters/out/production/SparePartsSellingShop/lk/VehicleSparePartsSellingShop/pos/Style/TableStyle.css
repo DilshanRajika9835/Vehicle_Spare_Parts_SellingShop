@@ -1,0 +1,29 @@
+.table-view{
+    -fx-background-radius: 10;
+    -fx-font-size: 12;
+    -fx-font-family: inherit;
+    -fx-prompt-text-fill: red;
+    -fx-effect: dropshadow(three-pass-box, transparent, 10, 6.0, 100, 100);
+    -fx-blend-mode: multiply;
+-fx-background-color: #a4a4d0; -fx-text-fill: #b9b9ec
+
+
+
+
+
+}
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: brown;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background: -fx-accent;
+    -fx-text-fill: -fx-selection-bar-text;
+}
+.table-cell-required-field {
+    -fx-control-inner-background: -sif-required_field-color;
+    -fx-background-color:-fx-table-cell-border-color, -fx-control-inner-background;
+    -fx-border-color: deepskyblue deepskyblue deepskyblue deepskyblue ;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+    -fx-text-fill: -fx-text-inner-color;
+}
+

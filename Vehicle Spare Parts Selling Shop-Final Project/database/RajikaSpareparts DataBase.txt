@@ -1,0 +1,67 @@
+DROP DATABASE IF EXISTS RajikaMoters;
+CREATE DATABASE RajikaMoters;
+USE RajikaMoters;
+
+CREATE Table Bill(
+ BillID varchar(40)not null,
+CONSTRAINT PRIMARY KEY(	BillID)
+);
+CREATE Table Item(
+ModelNo varchar(100)not null,
+VehicleType varchar(10)not null,
+Description varchar(100)not null,
+Color varchar(10)not null,
+Width varchar(10) default'No',
+Hight varchar(10)default'No',
+Brand varchar(10)not null,
+UnitPrice decimal(10,2)not null,
+QtyOnHand int(10)not null,
+Descount decimal(10,2),
+constraint primary key(ModelNo)
+);
+CREATE Table Orders(
+OrderID varchar(20) not null,
+OrderDate  VARCHAR(50)not null,
+OrderTime VARCHAR(50) default'No',
+BillID varchar(40)not null,
+constraint primary key(OrderID,BillID),
+constraint Unique key(OrderID,OrderDate,BillID),
+constraint foreign key(BillID) references Bill(BillID)on delete cascade on update cascade
+);
+CREATE Table Payment(
+PayID varchar(20)not null,
+OrderID varchar (20) not null,
+PaymentType varchar(20)not null,
+Cost decimal(10,2) not null,
+constraint primary key(PayID),
+constraint foreign key(OrderID) references Orders(OrderID)on delete cascade on update cascade
+
+);
+
+CREATE Table  OrderDetail(
+OrderID varchar (20) not null,
+ModelNo varchar(6)not null,
+OrderQTY int (11)not null,
+Descount decimal(6,2)not null,
+constraint primary key(ModelNo,orderID),
+constraint foreign key(ModelNo) references Item(ModelNo)on delete cascade on update cascade,
+constraint foreign key(OrderID) references Orders(OrderID)on delete cascade on update cascade
+
+);
+create table ReturnItem(
+BillID varchar(40)not null,
+OrderID varchar (20)not null,
+ModelNo varchar(6)not null,
+ReturnDate varchar(20)not null,
+ReturnTime varchar(6)default'No',
+constraint primary key(ModelNo,orderID,BillID),
+constraint foreign key(ModelNo) references Item(ModelNo)on delete cascade on update cascade,
+constraint foreign key(OrderID) references Orders(OrderID)on delete cascade on update cascade,
+constraint foreign key(BillID) references Bill(BillID)on delete cascade on update cascade
+);
+
+insert into bill values('B002344');
+insert into item values('M0034','Car','10kg bearing bol','black','2mm','3mm','original',30000,23,0.05);
+insert into orders values('9934','2020-09-09','3:00pm','B002344');
+insert into orderdetail values('9934','B002344',3,0.05);
+insert into returnItem values ('B002344','9934','M0034','2020-05-09','3:00pm');

@@ -1,0 +1,145 @@
+DROP DATABASE IF EXISTS RajikaMoters;
+CREATE DATABASE RajikaMoters;
+USE RajikaMoters;
+
+CREATE TABLE Employee(
+NICNumber varchar(30)NOT NULL,
+Name  varchar(30)NOT NULL,
+Address  varchar(10)NOT NULL,
+Gender  varchar(10)NOT NULL,
+BirthDay  varchar(30)NOT NULL,
+PhoneNumber  int(10)NOT NULL,
+post varchar (30)NOT NULL,
+Salary  decimal(10,2),
+CONSTRAINT PRIMARY KEY(NICNumber)
+);
+
+CREATE TABLE  Login(
+LoginID  int (100)auto_Increment NOT NULL,
+UserName  varchar(30)NOT NULL,
+PassWord  varchar(20)NOT NULL,
+LoginDate  varchar(30)NOT NULL,
+LoginTime  varchar(30)NOT NULL,
+LoginStates  varchar(30)NOT NULL,
+CONSTRAINT PRIMARY KEY(LoginID)
+
+);
+
+CREATE TABLE  Orders(
+OrderID varchar(20) NOT NULL,
+OrderDate  VARCHAR(50)NOT NULL,
+OrderTime VARCHAR(50) NOT NULL,
+CONSTRAINT PRIMARY KEY(OrderID),
+CONSTRAINT UNIQUE KEY(OrderID,OrderDate)
+
+);
+CREATE TABLE Item(
+ModelNo varchar(100)NOT NULL,
+Description varchar(100)NOT NULL,
+QtyOnHand int(20)NOT NULL,
+Brand varchar(20)NOT NULL,
+Color varchar(20)NOT NULL,
+VehicleType varchar(20)NOT NULL,
+Width varchar(10) NOT NULL,
+Height varchar(10)NOT NULL,
+Descount decimal(10,2),
+UnitPrice decimal(10,2)NOT NULL,
+CONSTRAINT PRIMARY KEY(ModelNo)
+);
+CREATE TABLE Supplier(
+SupplierID  varchar(30)NOT NULL,
+CompanyName  varchar(30)NOT NULL,
+SupplierName  varchar(30)NOT NULL,
+Tel   int(10)NOT NULL,
+CompanyAddress  varchar(30)NOT NULL,
+companyEmailAddress varchar(50),
+CONSTRAINT PRIMARY KEY(SupplierID,CompanyName)
+
+
+
+);
+create table SupplyDetail(
+SupplierID varchar(30)NOT NULL,
+ModelNo varchar(100)NOT NULL,
+SupplyDate varchar(30)NOT NULL,
+SupplyTime varchar(30)NOT NULL,
+CONSTRAINT PRIMARY KEY(SupplierID,ModelNo,SupplyDate),
+CONSTRAINT  FOREIGN KEY(SupplierID) REFERENCES Supplier(SupplierID)ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT  FOREIGN KEY(ModelNo) REFERENCES Item(ModelNo)ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE  OrderDetail(
+OrderID varchar (20)NOT NULL,
+ModelNo varchar(100)NOT NULL,
+OrderQTY int (11)NOT NULL,
+Descount decimal(6,2),
+CONSTRAINT PRIMARY KEY(ModelNo,orderID),
+CONSTRAINT  FOREIGN KEY(ModelNo) REFERENCES Item(ModelNo)ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT  FOREIGN KEY(OrderID) REFERENCES Orders(OrderID)ON DELETE CASCADE ON UPDATE CASCADE
+
+);
+
+CREATE TABLE  Payment(
+PayID    int (100)auto_Increment NOT NULL,
+OrderID varchar (20) NOT NULL,
+PaymentType varchar(20)NOT NULL,
+Cost decimal(10,2) NOT NULL,
+Cash decimal(10,2)NOT NULL,
+Balance decimal(10,2)NOT NULL,
+CONSTRAINT PRIMARY KEY(PayID),
+CONSTRAINT  FOREIGN KEY(OrderID) REFERENCES Orders(OrderID)ON DELETE CASCADE ON UPDATE CASCADE
+
+);
+
+CREATE TABLE  ReturnItem(
+OrderID varchar (20)NOT NULL,
+Totalcost decimal(10,2)NOT NULL,
+ReturnQty int(20)NOT NULL,
+ReturnMoney decimal(10,2)NOT NULL,
+ModelNo varchar(100)NOT NULL,
+ReturnDate varchar(20)NOT NULL,
+ReturnTime varchar(20)NOT NULL,
+CONSTRAINT PRIMARY KEY(orderID,ModelNo,ReturnTime),
+CONSTRAINT  FOREIGN KEY(OrderID) REFERENCES Orders(OrderID)ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+
+
+
+
+
+
+
+
+insert into Employee values('980653285V','Dilshan Rajika','Colombo','Mail','1998-03-05',0766681528,'Manager',30000);
+insert into Employee values('980123456V','Nuwan Priyankara','Colombo','Mail','1998-03-05',0766681528,'Chashier',30000);
+
+
+
+insert into item values('M0034','1g bearing bol','300','Original','black','van','3mm','5mm',4,1000);
+insert into item values('M0035','160kg Value set','300','Nomal ','black','Car','3mm','5mm',4,5000);
+insert into item values('M0036','300kg hedder','300','Original','Red','van','3mm','5mm',4,500);
+insert into item values('M0037','403kg  light','300','Nomal','Pink','Lorry','3mm','5mm',4,600);
+insert into item values('M0038','Battery pack','300','Original','Blue','van','3mm','5mm',4,6700);
+insert into item values('M0039','Light Halagan','300','Nomal','Green','Bus','3mm','5mm',4,4600);
+insert into item values('M0040','Nuts','300','Original','black','van','3mm','5mm',4,780);
+insert into item values('M0041','Bool value','300','Original','black','van','3mm','5mm',5,4500);
+insert into item values('M0042','30kg Cabaretor','300','Original','black','MoterBike','3mm','5mm',4,4700);
+insert into item values('M0043','20kg Amaron Battery','300','Original','black','van','3mm','5mm',4,4900);
+insert into item values('M0044','660kg bearing bol','300','Original','black','ThreeWheel','3mm','5mm',4,5000);
+insert into item values('M0045','16kg bearing bol','300','Nomal','black','van','5mm','5mm',4,6000);
+insert into item values('M0046','17kg bearing bol','300','Original','black','Lorry','6mm','5mm',4,2200);
+insert into item values('M0047','14kg bearing bol','300','Nomal','Red','Bus','3mm','7mm',4,1200);
+insert into item values('M0048','105kg bearing bol','300','Original','black','van','8mm','5mm',4,4500);
+insert into item values('M0049','106g bearing bol','300','Nomal','White','Lorry','33mm','54mm',4,45600);
+
+
+
+insert into Orders values('D001','2002-09-08','3:00pm');
+insert into Orderdetail values('D001','M0034',5,4);
+insert into Orderdetail values('D001','M0038',3,4);
+insert into Orderdetail values('D001','M0035',4,4);
+insert into Orderdetail values('D001','M0036',2,4);
+insert into Orderdetail values('D001','M0037',5,4);
+insert into Payment values(1,'D001','Cash',4800,50000,200);

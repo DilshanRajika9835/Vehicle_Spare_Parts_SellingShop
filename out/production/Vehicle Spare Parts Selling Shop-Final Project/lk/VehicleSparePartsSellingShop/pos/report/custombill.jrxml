@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2020-10-03T11:01:55 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="custombill" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c1c17b65-484e-4f7f-be5d-24a61f43d270">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DilshanRajikaBill "/>
+	<parameter name="OrderID" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.Double"/>
+	<parameter name="balance" class="java.lang.Double"/>
+	<parameter name="regno" class="java.lang.String"/>
+	<parameter name="cash" class="java.lang.Double"/>
+	<parameter name="saving" class="java.lang.Double"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT rajikamoters.item.`ModelNo`,
+	rajikamoters.item.`Description`,
+	rajikamoters.item.`UnitPrice`,
+	rajikamoters.orderdetail.`OrderQTY`,
+	rajikamoters.orderdetail.`Discount`,
+	sum( rajikamoters.item.UnitPrice * rajikamoters.orderdetail.OrderQTY) - rajikamoters.orderdetail.Discount AS total
+FROM rajikamoters.orderdetail
+	INNER JOIN rajikamoters.item ON 
+	 rajikamoters.orderdetail.`ModelNo` = rajikamoters.item.`ModelNo` 
+	INNER JOIN rajikamoters.orders ON 
+	 rajikamoters.orderdetail.`OrderID` = rajikamoters.orders.`OrderID` 
+WHERE 
+	 rajikamoters.orders.`OrderID` = $P{OrderID} 
+GROUP BY rajikamoters.item.`ModelNo`]]>
+	</queryString>
+	<field name="ModelNo" class="java.lang.String"/>
+	<field name="Description" class="java.lang.String"/>
+	<field name="UnitPrice" class="java.math.BigDecimal"/>
+	<field name="OrderQTY" class="java.lang.Integer"/>
+	<field name="Discount" class="java.math.BigDecimal"/>
+	<field name="total" class="java.math.BigDecimal"/>
+	<variable name="DiscountPrice1" class="java.lang.Integer" resetType="Column" calculation="Count"/>
+	<group name="ModelNo">
+		<groupExpression><![CDATA[$F{ModelNo}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="149" splitType="Stretch">
+			<staticText>
+				<reportElement x="-4" y="52" width="302" height="78" uuid="f17642ae-9e25-4ea2-8175-81667c36ca21"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MoterBike,Car,Van,Bus,Lorry,ThreeWheel, Spare parts      Honda,Yamaha,Bajaj,Tvs,Hero,Mahendra,Demak,Susuki 422 c,Hiramura Road,Beligaha Junction,Galle                     Tel :0912345667 /0766654328               	                   	 Email :RajkaMoters@gmail.com                                                           ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="6" width="430" height="46" uuid="fe57d11b-dd8c-4127-976d-dbbb0c608e32"/>
+				<textElement>
+					<font fontName="SansSerif" size="29" isBold="true"/>
+				</textElement>
+				<text><![CDATA[            RajikaMoters (Pvt)Ltd.]]></text>
+			</staticText>
+			<textField pattern="HH:mm:ss a">
+				<reportElement x="300" y="93" width="154" height="21" uuid="0b4affde-c919-44a4-b137-3478e675e008"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="301" y="78" width="154" height="22" uuid="b18dfa0b-fdb7-429c-881f-d6826ee1ece5"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="420" y="6" width="130" height="94" uuid="5109781e-96a1-4caf-8986-521dd8fc0f07"/>
+				<imageExpression><![CDATA["C:/Users/DELL/Documents/SlHelper/billiconnew.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="302" y="110" width="100" height="20" uuid="76ae1d42-57bc-459a-9566-19b7eded588f"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reg No :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-2" y="135" width="562" height="1" uuid="0e3cf97c-7976-46fd-8cf0-62be2c3ed31a"/>
+			</line>
+			<textField>
+				<reportElement x="408" y="110" width="141" height="20" uuid="06125338-a7e1-4ab5-94b7-5c9e88f54314"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{regno}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="-11" y="7" width="92" height="20" uuid="28b1238e-6ddd-45c1-ac86-ab4f43ae552d"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ModeNo ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="84" y="7" width="140" height="20" uuid="d114db5f-7e05-4449-ac73-32bc1604f93b"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="7" width="92" height="20" uuid="094d9e41-adc6-4a91-8b6b-9da3c02b5b1e"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UnitPrice]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="7" width="47" height="20" uuid="b2730007-f2da-4075-b223-a6d8e4a6df12"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="7" width="70" height="20" uuid="b2193431-ecc2-4cd7-8caa-0acb6597e731"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="7" width="100" height="20" uuid="c4338118-45ab-455f-83ab-39f2de1801ec"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[     Price]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="-10" y="5" width="86" height="16" uuid="5b71a1ae-8740-464b-8a01-a43128580a03"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ModelNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="5" width="133" height="19" uuid="dc77ec97-c483-43b1-895e-4b9cdb21d142"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="224" y="4" width="90" height="20" uuid="4dfa6565-dbf2-4a1e-8442-929ae9949972"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{UnitPrice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="328" y="5" width="49" height="17" uuid="cef27550-3c10-42ba-865b-0065f6168ff3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{OrderQTY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="5" width="81" height="17" uuid="0881dfbb-c5d6-4fa4-ab8c-8b16d02562ef"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="5" width="72" height="20" uuid="68311f7b-e619-491f-82a9-98012e64bf6d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Discount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="116" splitType="Stretch">
+			<staticText>
+				<reportElement x="334" y="66" width="224" height="20" uuid="e20b88d1-5d61-4410-a3e2-420eb5094353"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[YOU HAVE SAVING RUPEES ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="334" y="1" width="92" height="20" uuid="d1195192-ca7f-4055-af0e-5967f357a9d7"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total           :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="46" width="92" height="20" uuid="e033ca7b-ccb8-4b78-a160-0def14f2f5d3"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balance     :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="24" width="92" height="20" uuid="dd083c7e-689b-47a6-b1b7-31e8d870f896"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[cash           :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="439" y="3" width="114" height="18" uuid="12fe691a-0705-4d8e-aaa6-4fcfe0909393">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="438" y="26" width="114" height="18" uuid="69858bde-e936-4af6-8f43-845bac34812f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cash}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="47" width="114" height="18" uuid="33712532-444a-462c-b1e6-7a8aab59856c">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{balance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="86" width="145" height="24" uuid="8af6fdcc-867b-44f6-819a-e3b56c64daec"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{saving}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement x="-10" y="4" width="470" height="30" uuid="82d58b66-a0d3-4083-bfcb-efaf3b19bd5a"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*EXCHANGE POSSIBLE WITH IN 7DAYS.                                                                                    *BILL MUST BE SUBMIT CASHIER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="36" width="290" height="28" uuid="148f4fcc-89cd-4174-9652-05f338a5b11b"/>
+				<textElement>
+					<font size="21" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Thank you Come Again!]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-20" y="64" width="580" height="20" uuid="81f9b6e4-b6e1-4ecc-804c-2730df8f0c59"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Any complain ? call 0766681528         info@Moters.lk        visit: www.RajikaMoters.lk]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-20" y="-1" width="572" height="1" uuid="d4908e17-45d4-4498-96e6-355e53fe014c"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="700.0" maxWidth="1311.0" minHeight="700.0" minWidth="1311.0" prefHeight="700.0" prefWidth="1311.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.VehicleSparePartsSellingShop.pos.controller.OrdersFormController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1311.0" layoutY="-1.0" pickOnBounds="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+         <image>
+            <Image url="@../assert/bg2.jpg" />
+         </image></ImageView>
+      <Label layoutX="16.0" layoutY="98.0" prefHeight="27.0" prefWidth="101.0" text="Model No" textFill="#1b1919">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="180.0" prefHeight="25.0" prefWidth="78.0" text="Type" textFill="#1b1919">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="581.0" layoutY="90.0" prefHeight="27.0" prefWidth="110.0" text="Description" textFill="#1b1919">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbmodelnumber" layoutX="322.0" layoutY="95.0" onAction="#CmbSelectonAction" prefHeight="31.0" prefWidth="250.0" promptText="Select ModelNo" styleClass="combo-box" stylesheets="@../Style/Style.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Label layoutX="14.0" layoutY="137.0" prefHeight="27.0" prefWidth="129.0" text="QtyOnHand" textFill="#1b1919">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="324.0" layoutY="137.0" prefHeight="27.0" prefWidth="78.0" text="Brand" textFill="#1b1919">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="585.0" layoutY="137.0" prefHeight="25.0" prefWidth="78.0" text="Width" textFill="#1b1919">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="893.0" layoutY="132.0" prefHeight="27.0" prefWidth="60.0" text="Hight" textFill="#1b1919">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="323.0" layoutY="180.0" prefHeight="27.0" prefWidth="101.0" text="UnitPrice" textFill="#1b1919">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="894.0" layoutY="177.0" prefHeight="27.0" prefWidth="86.0" text="DisCount" textFill="#1b1919">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="19.0" layoutY="223.0" prefHeight="25.0" prefWidth="39.0" text="Qty" textFill="#1b1919">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="1002.0" layoutY="253.0" onAction="#btnSelectItemOnAction" prefHeight="40.0" prefWidth="169.0" style="-fx-background-color: green;" styleClass="label" stylesheets="@../Style/Style.css" text="        Select Item" textFill="#f8f0f0">
+         <font>
+            <Font name="Bell MT Bold" size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblselectitem" layoutX="19.0" layoutY="306.0" opacity="0.91" prefHeight="226.0" prefWidth="1151.0" stylesheets="@../Style/Style.css" tableMenuButtonVisible="true">
+        <columns>
+          <TableColumn fx:id="colmodelno" editable="false" prefWidth="111.0" text="Model No" />
+          <TableColumn fx:id="coldescription" editable="false" prefWidth="381.0" text="Description" />
+            <TableColumn fx:id="coltype" editable="false" prefWidth="115.0" text="Type" />
+            <TableColumn fx:id="colunitprice" editable="false" prefWidth="102.0" text="UnitPrice" />
+            <TableColumn fx:id="coldiscount" editable="false" prefWidth="102.0" text="Discount" />
+            <TableColumn fx:id="colqty" editable="false" prefWidth="84.0" text="Qty" />
+            <TableColumn fx:id="coltotal" editable="false" prefWidth="135.0" text="Total" />
+            <TableColumn fx:id="colremove" editable="false" prefWidth="120.0" text="Remove" />
+        </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="1004.0" layoutY="600.0" onAction="#btnConformOrderOnAction" prefHeight="40.0" prefWidth="169.0" style="-fx-background-color: green;" styleClass="label" stylesheets="@../Style/Style.css" text="        Conform Order" textFill="#f8f0f0">
+         <font>
+            <Font name="Bell MT Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="23.0" layoutY="558.0" prefHeight="27.0" prefWidth="169.0" text="Discount  Rs/=  :" textFill="#070707">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="589.0" layoutY="179.0" prefHeight="25.0" prefWidth="78.0" text="Color" textFill="#1b1919">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="630.0" layoutY="559.0" prefHeight="27.0" prefWidth="66.0" text="Cash :" textFill="#070707">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="871.0" layoutY="559.0" prefHeight="27.0" prefWidth="149.0" text="Balance Rs/= :" textFill="#070707">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="56.0" prefHeight="27.0" prefWidth="101.0" text="Order ID" textFill="#1b1919">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="430.0" layoutY="3.0" onMouseClicked="#lblClearClickOnAction" prefHeight="75.0" prefWidth="500.0" text="Place Order " textFill="#2419bb">
+         <font>
+            <Font name="Bell MT Bold" size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="351.0" layoutY="557.0" prefHeight="27.0" prefWidth="101.0" text="Total Price" textFill="#070707">
+         <font>
+            <Font name="Bell MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtorderid" editable="false" layoutX="130.0" layoutY="52.0" prefHeight="31.0" prefWidth="184.0" promptText="Order ID" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtmodelno" focusColor="#eef0f5" layoutX="131.0" layoutY="94.0" onAction="#txtModelNoSearchOnAction" prefHeight="31.0" prefWidth="184.0" promptText="Enter or Search Model No" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtqtyonhand" editable="false" focusColor="#e9edf8" layoutX="132.0" layoutY="136.0" prefHeight="31.0" prefWidth="184.0" promptText="QtyOnHand" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtunitprice" editable="false" layoutX="413.0" layoutY="177.0" prefHeight="33.0" prefWidth="169.0" promptText="UnitPrice" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtbrand" editable="false" layoutX="410.0" layoutY="134.0" prefHeight="31.0" prefWidth="169.0" promptText="Brand" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtcolor" editable="false" layoutX="687.0" layoutY="176.0" prefHeight="31.0" prefWidth="200.0" promptText="Color" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txttype" editable="false" layoutX="133.0" layoutY="177.0" prefHeight="31.0" prefWidth="184.0" promptText="Type" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtwidth" editable="false" layoutX="688.0" layoutY="133.0" prefHeight="31.0" prefWidth="200.0" promptText="Width" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtdiscount" editable="false" layoutX="981.0" layoutY="174.0" prefHeight="31.0" prefWidth="200.0" promptText="Discount" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtdescription" editable="false" layoutX="689.0" layoutY="88.0" prefHeight="33.0" prefWidth="492.0" promptText="Description" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtheight" editable="false" layoutX="982.0" layoutY="130.0" prefHeight="31.0" prefWidth="200.0" promptText="Height" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtqty" layoutX="134.0" layoutY="219.0" onAction="#txtItemSelectOnAction" prefHeight="31.0" prefWidth="184.0" promptText="Enter Qty" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtdiscountprice" editable="false" layoutX="177.0" layoutY="556.0" prefHeight="31.0" prefWidth="169.0" promptText="Save Money" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txttotalprice" editable="false" layoutX="458.0" layoutY="557.0" prefHeight="31.0" prefWidth="169.0" promptText="Total Price" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtcash" layoutX="692.0" layoutY="557.0" onAction="#txtCashPaymentOnAction" prefHeight="31.0" prefWidth="169.0" promptText="Enter Cash Here" styleClass="label" stylesheets="@../Style/Style.css" />
+      <JFXTextField fx:id="txtbalance" editable="false" layoutX="1003.0" layoutY="558.0" prefHeight="31.0" prefWidth="169.0" promptText="Balance" styleClass="label" stylesheets="@../Style/Style.css" />
+      <ImageView fitHeight="30.0" fitWidth="60.0" layoutX="998.0" layoutY="608.0" opacity="0.77" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/placeOrder.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="1005.0" layoutY="262.0" opacity="0.62" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/selectItem.png" />
+         </image>
+      </ImageView>
+   </children>
+   <effect>
+      <Glow />
+   </effect>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
